@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+	{
+	double x; double y; double S; double X; double Y; int s;
+	cin >> x; 
+	cin >> y;
+	s = ceil(x) + ceil(y);
+	if ((s % 2 == 0) && (x!=0) && (y!=0))
+	{
+		X = x - trunc(x);
+		Y = 1-(y - trunc(y));
+		S = X * X + Y * Y;
+		if (S < 1)
+			cout << "DA";
+		else
+			cout << "NO";
+	}
+	else if ((s % 2 !=0) && (x != 0) && (y != 0))
+	{
+		X =1-(x - trunc(x));
+		Y = y - trunc(y);
+		S = X* X + Y * Y;
+		if (S < 1)
+			cout << "DA";
+		else
+			cout << "NO";
+	}
+	else if ((x == 0) || (y == 0))
+	{
+		if (x == 0)
+		{
+			if ((s % 2 == 1) && (s>y))
+				cout << "DA";
+			else
+				cout << "NO";
+		}
+		else if (y == 0)
+		{
+			if ((s % 2 == 1) && (s>x))
+				cout << "NO";
+			else
+				cout << "DA";
+		}
+	}
+	return 0;
+	system("pause");
+	}
